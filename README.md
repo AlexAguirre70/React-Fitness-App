@@ -8,6 +8,7 @@ With the functionality to choose exercise categories and specific muscle groups,
 
 ##  Technology
 * React 18 - Front End
+* RapidAPI
 
 ## Database Structure
 
