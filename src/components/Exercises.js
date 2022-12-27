@@ -4,18 +4,22 @@ import { Box, Stack, Typography } from '@mui/material'
 
 import { exerciseOptions, fetchData } from '../utils/fetchData'
 
-const Exercises = ({exercises, setExercises,bodyPart}) => {
-  return (
+import ExerciseCard from './ExerciseCard'
+
+const Exercises = ({exercises,setExercises,bodyPart}) => {
+
+    return (
     <Box id='exercises'
     sx={{mt: {lg:'110px'}}} mt='50px' p='20px'>
         <Typography variant='h3' mb='46px' textAlign='center'>
              Showing Results
         </Typography>
-        <Stack direction='row' flexWrap='wrap' justifyContent='center'
+        <Stack direction='row' flexWrap='wrap' justifyContent='center' 
         sx={{gap: {lg: '110px', xs: '50px'}}}>
             {exercises.map((exercise,index)=>(
-               <p>{exercise.name}</p>
+               <ExerciseCard key={index} exercise={exercise}/>
             ))}
+            
         </Stack>
     </Box>
   )
