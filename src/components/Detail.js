@@ -28,11 +28,11 @@ const Detail = ({exerciseDetail}) => {
         <img src={gifUrl} alt={name} loading='lazy' className='detail-image' />
         <Stack sx={{gap:{lg: '35px',xs:'20px'}}}>
             <Typography variant='h3'>
-                Exercises keep you strong. {name} is one of the best 
-                exercises to target your {target}.
+                {name}
             </Typography>
             <Typography variant='h6'>
-                {name} {target}
+                Exercises keep you strong. {name} is one of the best 
+                exercises to target your {target}.
             </Typography>
             {extraDetail.map((item)=>(
                 <Stack key={item.name} direction='row' gap='24px' alignItems='center'>
