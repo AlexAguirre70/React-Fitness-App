@@ -9,13 +9,16 @@ const Detail = ({exerciseDetail}) => {
     const {bodyPart,gifUrl, name,target,equipment} = exerciseDetail
 
     const extraDetail =[
-        { icon: BodyPartImage,
+        { id:0,
+          icon: BodyPartImage,
           name: bodyPart  
         },
-        { icon: TargetImage,
+        {   id:1,
+            icon: TargetImage,
             name: target  
           },
-          { icon: EquipmentImage,
+          { id:2,
+            icon: EquipmentImage,
             name: equipment  
           },
     ]
@@ -27,19 +30,19 @@ const Detail = ({exerciseDetail}) => {
     }}>
         <img src={gifUrl} alt={name} loading='lazy' className='detail-image' />
         <Stack sx={{gap:{lg: '35px',xs:'20px'}}}>
-            <Typography variant='h3'>
+            <Typography variant='h4' sx={{textTransform:'capitalize'}} >
                 {name}
             </Typography>
             <Typography variant='h6'>
-                Exercises keep you strong. {name} is one of the best 
+                Exercises keep you strong. The {name} is one of the best 
                 exercises to target your {target}.
             </Typography>
             {extraDetail.map((item)=>(
-                <Stack key={item.name} direction='row' gap='24px' alignItems='center'>
+                <Stack key={item.id} direction='row' gap='24px' alignItems='center'>
                     <Button sx={{background:'#fff2db', borderRadius: '50%', width:'100px', height:'100px'}} >
                         <img src={item.icon} alt={bodyPart} style={{height:'50px', width:'50px'}}/>
                     </Button>
-                    <Typography textTransform='capitalize' variant='h5'>
+                    <Typography  textTransform='capitalize' variant='h5'>
                         {item.name}
                     </Typography>
                 </Stack>
