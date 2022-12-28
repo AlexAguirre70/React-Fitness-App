@@ -1,6 +1,7 @@
 import React from 'react'
 import { Stack, Box, Typography} from '@mui/material'
 
+
 const ExerciseVideos = ({exerciseVideos, name}) => {
 
     if(!exerciseVideos.length) return 'Loading...'
@@ -22,6 +23,16 @@ const ExerciseVideos = ({exerciseVideos, name}) => {
                 target='_blank'
                 rel='noreferrer'>
                     <img src={item.video.thumbnails[0].url} alt={item.video.title}/>
+                    <Box>
+                        <Typography variant='h5' color='#000'>
+                            {item.video.title}
+                        </Typography>
+                    </Box>
+                    <Box>
+                        <Typography variant='h6' color='#000'>
+                            {item.video.channelName}
+                        </Typography>
+                    </Box>
                 </a>
 
             ))
